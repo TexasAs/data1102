@@ -64,28 +64,44 @@ nano ~/app/app/settings.py
 
 - импортируем модуль оs
 
-__import os__
+___
+
+    import os
+
+___
 
 - внесем IP нашего хоста (хост рандомный, у вас будет свой)
 
-__ALLOWED_HOSTS = ['123.456.78.90', 'другие домены или IP при необходимости']__
+___
+
+    ALLOWED_HOSTS = ['123.456.78.90', 'другие домены или IP при необходимости']
+
+___
 
 - добавим STATIC_ROOT
 
-__STATIC_ROOT = os.path.join(BASE_DIR, 'static/')__
+___
+
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+___
 
 - изменим настройки с MySQL на PostgreSQL
 
-__DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'inp_db',
-        'USER': 'texas',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
-        'PORT': 5432,
-    }
-}__
+___
+
+    DATABASES = {  
+        'default': {  
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',  
+            'NAME': 'inp_db',  
+            'USER': 'texas',  
+            'PASSWORD': '1234',  
+            'HOST': '127.0.0.1',  
+            'PORT': 5432,  
+            }  
+        }
+
+___
 
 Теперь выполним миграции, создадим суперюзера, соберем статические файлы:
 
