@@ -1,0 +1,19 @@
+{% extends 'inp/base.html' %}
+{% block content %}
+<p class="text-center">В этой форме мы динамически вводим имена</p>
+<p class="text-center">и после отправки данные в формате JSON сохраняются в нашу базу данных</p>
+
+  <form method="post">
+    {{ formset.management_form }}
+    {% csrf_token %}
+    <ul id="inputs_wrapper">
+      {% for form in formset %}
+        <li class="form-row">{{ form }}<button class="delete-button" type="button">Удалить</button>
+        </li>
+      {% endfor %}
+    </ul>
+    <button id="add_button" type="button" class="btn btn-success">Добавить еще</button>
+    <input type="submit" class="btn btn-success" value="Отправить" />
+  </form>
+
+{% endblock %}

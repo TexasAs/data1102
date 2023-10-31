@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Django work</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'inp/images/main.ico' %}" type="image/x-icon">
+    <link type="text/css" href="{% static 'inp/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'inp/css/style.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="{% static 'inp/js/base_js.js' %}"></script>
+</head>
+<body>
+<h3>Django dynamic</h3>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

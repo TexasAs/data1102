@@ -1,0 +1,15 @@
+{% extends 'inp/base.html' %}
+{% block content %}
+
+<p class="text-center">Здесь мы выводим инпуты (все добавленные инпуты)</p>
+
+{% for json in json_set %}
+    <ul class="list-unstyled">
+        <li>Запись под номером {{ json.pk }} в нашей базе данных</li>
+        <li>{{ json.name }}</li>
+    </ul>
+{% endfor %}
+
+<a class="link-success" href="{% url 'home' %}">Вернутся к заполнению формы</a>
+
+{% endblock %}
